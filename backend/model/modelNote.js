@@ -25,18 +25,22 @@ const Note = sequelize.define('note', {
   // Other model options go here
 });
 User.hasMany(Note,{
-  foreignKey: 'id_user'
+  foreignKey: 'id_user',
+  allowNull:false
 });
-Note.belongsTo(User);
+Note.belongsTo(User,{
+  foreignKey: 'id_user',
+  allowNull:false
+});
 
-// async function create(){
-//   // await Note.sync();
-//   // await Note.sync({ force: true })
-//   await sequelize.queryInterface.removeColumn("note","userId")
-//   // await Note.removeColumn("userId")
-//   console.log("The table for the User model was just (re)created!");
-// }
+async function create(){
+  // await Note.sync();
+  // await Note.sync({ force: true })
+  // await sequelize.queryInterface.removeColumn("note","userId")
+  // await Note.removeColumn("userId")
+  console.log("The table for the User model was just (re)created!");
+}
 
-// create()
+create()
 
 module.exports = Note

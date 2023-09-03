@@ -25,12 +25,12 @@ const User = sequelize.define('user', {
   // Other model options go here
 });
 
-// async function create(){
-//   // await User.sync();
-//   await User.sync({ force: true })
-//   console.log("The table for the User model was just (re)created!");
-// }
+async function create(){
+  // await User.sync();
+  // await User.sync({ force: true })
+  console.log("The table for the User model was just (re)created!");
+}
 
-// create()
+create()
 
 module.exports = User

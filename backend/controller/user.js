@@ -63,6 +63,11 @@ const register = async (req, res) => {
 }
 
 const logout = async (req, res) => {
-
+    console.log(req.params.id);
+    const check_id = await modelUser.findAll({
+        where: {
+            id: req.params.id.toString()
+        }})
+    res.json({"message":"logout succes"})
 }
 module.exports = { login, register, logout }

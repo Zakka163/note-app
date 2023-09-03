@@ -12,6 +12,9 @@ const generateToken = (data) => {
 const compareToken = (token) => {
     return jwt.verify(token, privateKey)
 }
+// const removeToken = (data)=>{
+//     return jwt.
+// }
 
 
 module.exports = {generateToken,compareToken}
